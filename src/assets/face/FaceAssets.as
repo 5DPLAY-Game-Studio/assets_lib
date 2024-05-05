@@ -64,5 +64,8 @@ package assets.face {
 		[Embed(source = "/../assets/face/ichigo.png")]
 		public var ichigo_png:Class;
 		
+		[Embed(source = "/../assets/face/ichigo_b.png")]
+		public var ichigo_b_png:Class;
+		
 	}
 }
