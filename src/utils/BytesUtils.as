@@ -33,6 +33,8 @@ package utils {
 		 * @param snd 声音对象
 		 * @param bytes 声音字节
 		 * 
+		 * @return 声音
+		 * 
 		 */
 		public static function loadSndByBytes(snd:Sound, bytes:ByteArray):Sound {
 			var bytesAvailable:uint = bytes.bytesAvailable;
@@ -45,6 +47,8 @@ package utils {
 		 * 加载字符串通过字节流
 		 * 
 		 * @param bytes 字符串字节
+		 * 
+		 * @return 字符串
 		 * 
 		 */
 		public static function loadStrByBytes(bytes:ByteArray):String {
