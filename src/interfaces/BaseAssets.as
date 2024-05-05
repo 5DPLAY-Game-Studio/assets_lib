@@ -120,6 +120,9 @@ package interfaces {
 			if (name.indexOf(".xml") != -1) {
 				return getXml(name);
 			}
+			else if (name.indexOf(".swf") != -1) {
+				return getSwf(name);
+			}
 			
 			var cls:Class = getResCls(name);
 			var res:* = new cls();
@@ -170,6 +173,24 @@ package interfaces {
 				var str:String = BytesUtils.loadStrByBytes(bytes);
 				xml.push(XML(str));
 			})[0];
+		}
+		
+		
+		/**
+		 * 获取 Swf 资源字节流
+		 * 
+		 * @param name Swf 名称
+		 * 
+		 * @return 对应 Swf 资源字节流
+		 */
+		public function getSwf(name:String):ByteArray {
+			var cls:Class = getResCls(name);
+			var bytes:ByteArray = new cls() as ByteArray;
+			if (!bytes) {
+				return null;
+			}
+			
+			return checkCache(cls, bytes);
 		}
 		
 		
