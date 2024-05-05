@@ -40,5 +40,19 @@ package utils {
 			
 			return snd;
 		}
+		
+		/**
+		 * 加载字符串通过字节流
+		 * 
+		 * @param bytes 字符串字节
+		 * 
+		 */
+		public static function loadStrByBytes(bytes:ByteArray):String {
+			var bytesAvailable:uint = bytes.bytesAvailable;
+			var str:String = bytes.readUTFBytes(bytesAvailable);
+			
+			return str;
+		}
+		
 	}
 }
