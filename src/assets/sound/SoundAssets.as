@@ -67,6 +67,9 @@ package assets.sound {
 		[Embed(source = "/../assets/sound/step2.mp3", mimeType="application/octet-stream"]
 		public var step2_mp3:Class;
 		
+		[Embed(source = "/../assets/sound/step3.mp3", mimeType="application/octet-stream"]
+		public var step3_mp3:Class;
+		
 	}
 }
 
