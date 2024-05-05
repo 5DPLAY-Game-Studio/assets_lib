@@ -52,6 +52,29 @@ package interfaces {
 		// 私有方法
 		//------------------------------------------------------------
 		
+		/**
+		 * 检查缓存，如果缓存存在则直接取缓存
+		 * 
+		 * @param key   键
+		 * @param value 值
+		 * @param next  如果缓存不存在要做什么
+		 * 
+		 * @return 所需的值
+		 */
+		private function checkCache(key:*, value:*, next:Function = null):* {
+			if (_cache[key]) {
+				return _cache[key];
+			}
+			
+			if (next != null) {
+				next();
+			}
+			
+			_cache[key] = value;
+			return value;
+		}
+		
+		
 		
 		//------------------------------------------------------------
 		// 公开方法
@@ -149,27 +172,6 @@ package interfaces {
 			})[0];
 		}
 		
-		/**
-		 * 检查缓存，如果缓存存在则直接取缓存
-		 * 
-		 * @param key   键
-		 * @param value 值
-		 * @param next  如果缓存不存在要做什么
-		 * 
-		 * @return 所需的值
-		 */
-		public function checkCache(key:*, value:*, next:Function = null):* {
-			if (_cache[key]) {
-				return _cache[key];
-			}
-			
-			if (next != null) {
-				next();
-			}
-			
-			_cache[key] = value;
-			return value;
-		}
 		
 		
 		
