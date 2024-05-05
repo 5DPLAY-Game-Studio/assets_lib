@@ -34,9 +34,11 @@ package utils {
 		 * @param bytes 声音字节
 		 * 
 		 */
-		public static function loadSndByBytes(snd:Sound, bytes:ByteArray):void {
+		public static function loadSndByBytes(snd:Sound, bytes:ByteArray):Sound {
 			var bytesAvailable:uint = bytes.bytesAvailable;
 			snd.loadCompressedDataFromByteArray(bytes, bytesAvailable);
+			
+			return snd;
 		}
 	}
 }

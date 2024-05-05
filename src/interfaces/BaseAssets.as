@@ -121,11 +121,10 @@ package interfaces {
 				return null;
 			}
 			
-			
 			var snd:Sound = new Sound();
 			return checkCache(cls, snd, function():void {
 				// 这样做后可以避免声音部分丢失
-				BytesUtils.loadSndByBytes(snd, bytes);
+				snd = BytesUtils.loadSndByBytes(snd, bytes);
 			});
 		}
 		
