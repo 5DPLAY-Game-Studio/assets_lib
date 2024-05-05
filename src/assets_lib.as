@@ -22,7 +22,9 @@ package {
 	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.media.Sound;
+	import flash.utils.ByteArray;
 	
+	import assets.EffectAssets;
 	import assets.bgm.BgmAssets;
 	import assets.face.FaceAssets;
 	import assets.font.FontAssets;
@@ -43,6 +45,8 @@ package {
 		public var soundAssets:SoundAssets = SoundAssets.I;
 		// bgm 资源
 		public var bgmAssets:BgmAssets = BgmAssets.I;
+		// effect 资源
+		public var effectAssets:EffectAssets = EffectAssets.I;
 		
 		public function assets_lib() {
 			return;
@@ -60,14 +64,19 @@ package {
 			
 			var bgm:Sound = getResByPath("assets/bgm/back.mp3");
 			bgm.play();
+			
+			var bytes:ByteArray = getResByPath("assets/effect.swf");
+			trace(bytes.length);
+			
 		}
 		
 		// 路径 -> 资源 对照
 		private const _assetsObj:Object = {
-			"bgm/"   : bgmAssets, 
-			"sound/" : soundAssets, 
-			"font/"  : fontAssets,
-			"face/"  : faceAssets
+			"bgm/" 			: bgmAssets, 
+			"sound/" 		: soundAssets, 
+			"font/" 		: fontAssets,
+			"face/" 		: faceAssets,
+			"effect.swf"	: effectAssets
 		};
 		
 		/**
@@ -81,9 +90,11 @@ package {
 			var lastIndex:int = path.lastIndexOf("/") + 1;
 			var file:String = path.substring(lastIndex, path.length);
 			
-	//		trace(file);
+//			trace(file);
 			
 			for (var key:String in _assetsObj) {
+//				trace(key)
+				
 				if (path.indexOf(key) == -1) {
 					continue;
 				}
