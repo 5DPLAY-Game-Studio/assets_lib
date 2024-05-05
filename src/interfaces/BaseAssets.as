@@ -144,10 +144,12 @@ package interfaces {
 			}
 			
 			
-			var str:String = bytes.readUTFBytes(bytes.bytesAvailable);
-			var xml:XML = XML(str);
 			
-			return checkCache(cls, xml);
+			var xml:Vector.<XML> = new Vector.<XML>();
+			return checkCache(cls, xml, function():void {
+				var str:String = bytes.readUTFBytes(bytes.bytesAvailable);
+				xml.push(XML(str));
+			})[0];
 		}
 		
 		/**
