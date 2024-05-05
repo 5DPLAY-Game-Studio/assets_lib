@@ -26,7 +26,7 @@ package interfaces {
 	import assets.bgm.BgmAssets;
 	import assets.sound.SoundAssets;
 	
-	import utils.SoundUtils;
+	import utils.BytesUtils;
 	
 	/**
 	 * 资源模板
@@ -125,7 +125,7 @@ package interfaces {
 			var snd:Sound = new Sound();
 			return checkCache(cls, snd, function():void {
 				// 这样做后可以避免声音部分丢失
-				SoundUtils.loadSndByBytes(snd, bytes);
+				BytesUtils.loadSndByBytes(snd, bytes);
 			});
 		}
 		

@@ -25,7 +25,7 @@ package utils {
 	/**
 	 * 声音工具
 	 */
-	public class SoundUtils {
+	public class BytesUtils {
 		
 		/**
 		 * 加载声音通过字节流
