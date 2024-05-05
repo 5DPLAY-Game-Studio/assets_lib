@@ -19,6 +19,7 @@
  */
 
 package {
+	import flash.display.Bitmap;
 	import flash.display.Sprite;
 	import flash.media.Sound;
 	
@@ -48,9 +49,11 @@ package {
 			
 			// 测试代码
 			
-			trace(getResByPath("assets/font/font1.xml"));
+			var xml:XML = getResByPath("assets/font/font1.xml");
+			trace(xml);
 			
-			addChild(getResByPath("assets/face/ichigo.png"));
+			var b:Bitmap = getResByPath("assets/face/ichigo.png");
+			addChild(b);
 			
 			var snd:Sound = getResByPath("assets/sound/step1.mp3");
 			snd.play();
