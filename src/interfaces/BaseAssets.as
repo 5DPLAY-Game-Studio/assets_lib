@@ -142,11 +142,9 @@ package interfaces {
 				return null;
 			}
 			
-			
-			
 			var xml:Vector.<XML> = new Vector.<XML>();
 			return checkCache(cls, xml, function():void {
-				var str:String = bytes.readUTFBytes(bytes.bytesAvailable);
+				var str:String = BytesUtils.loadStrByBytes(bytes);
 				xml.push(XML(str));
 			})[0];
 		}
