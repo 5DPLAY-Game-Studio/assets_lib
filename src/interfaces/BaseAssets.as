@@ -185,12 +185,11 @@ package interfaces {
 		 */
 		public function getSwf(name:String):ByteArray {
 			var cls:Class = getResCls(name);
-			var bytes:ByteArray = new cls() as ByteArray;
-			if (!bytes) {
-				return null;
-			}
 			
-			return checkCache(cls, bytes);
+			var bytes:Vector.<ByteArray> = new Vector.<ByteArray>();
+			return checkCache(cls, bytes, function():void {
+				bytes.push(new cls() as ByteArray);
+			})[0];
 		}
 		
 		
