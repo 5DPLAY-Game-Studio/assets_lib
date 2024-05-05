@@ -94,6 +94,10 @@ package interfaces {
 				}
 			}
 			
+			if (name.indexOf(".xml") != -1) {
+				return getXml(name);
+			}
+			
 			var cls:Class = getResCls(name);
 			var res:* = new cls();
 			if (!res) {
@@ -123,6 +127,27 @@ package interfaces {
 				// 这样做后可以避免声音部分丢失
 				SoundUtils.loadSndByBytes(snd, bytes);
 			});
+		}
+		
+		/**
+		 * 获取 Xml 资源
+		 * 
+		 * @param name Xml 名称
+		 * 
+		 * @return 对应 Xml 资源
+		 */
+		public function getXml(name:String):XML {
+			var cls:Class = getResCls(name);
+			var bytes:ByteArray = new cls() as ByteArray;
+			if (!bytes) {
+				return null;
+			}
+			
+			
+			var str:String = bytes.readUTFBytes(bytes.bytesAvailable);
+			var xml:XML = XML(str);
+			
+			return checkCache(cls, xml);
 		}
 		
 		/**
