@@ -67,5 +67,8 @@ package assets.bgm {
 		[Embed(source = "/../assets/bgm/bleach.mp3", mimeType="application/octet-stream")]
 		public var bleach_mp3:Class;
 		
+		[Embed(source = "/../assets/bgm/bleachboss.mp3", mimeType="application/octet-stream")]
+		public var bleachboss_mp3:Class;
+		
 	}
 }
