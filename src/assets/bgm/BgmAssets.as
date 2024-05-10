@@ -73,5 +73,8 @@ package assets.bgm {
 		[Embed(source = "/../assets/bgm/city.mp3", mimeType="application/octet-stream")]
 		public var city_mp3:Class;
 		
+		[Embed(source = "/../assets/bgm/congratulation.mp3", mimeType="application/octet-stream")]
+		public var congratulation_mp3:Class;
+		
 	}
 }
