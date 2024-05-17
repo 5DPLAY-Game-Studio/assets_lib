@@ -82,5 +82,8 @@ package assets.bgm {
 		[Embed(source = "/../assets/bgm/loading.mp3", mimeType="application/octet-stream")]
 		public var loading_mp3:Class;
 		
+		[Embed(source = "/../assets/bgm/naruto.mp3", mimeType="application/octet-stream")]
+		public var naruto_mp3:Class;
+		
 	}
 }
